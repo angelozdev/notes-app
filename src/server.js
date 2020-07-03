@@ -2,7 +2,8 @@
 
 const express = require('express');
 const app = express();
-const path = require('path')
+const path = require('path');
+const router = require('./routes/index.routes')
 
 // initialitions
 
@@ -17,9 +18,7 @@ app.use(express.json()); /* Para poder manipular json en las peticiones */
 // global variables
 
 // routes
-app.get('/', (req, res) => {
-   res.render('index')
-})
+app.use(router)
 
 // static files
 app.use(express.static(path.join(__dirname, 'public'))) /* Acá le decimos a express dónde se encuentran los archivos estáticos */
