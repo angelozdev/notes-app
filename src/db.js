@@ -1,12 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
-const {
-   NOTES_APP_MONGODB_DATABASE,
-   NOTES_APP_MONGODB_PASSWORD,
-   NOTES_APP_MONGODB_USER
-} = process.env;
 
-const MONGODB_URI=`mongodb+srv://${NOTES_APP_MONGODB_USER}:${NOTES_APP_MONGODB_PASSWORD}@node-app.sgvck.mongodb.net/${NOTES_APP_MONGODB_DATABASE}?retryWrites=true&w=majority`
+const MONGODB_URI = process.env.MONGODB_URI; /* La variable se fefine en .env y se trae gracias a dotenv que lee ese archivo y configura las varibales de entorno */
 
 mongoose.connect(MONGODB_URI, {
    useUnifiedTopology: true,
