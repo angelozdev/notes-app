@@ -3,6 +3,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const morgan = require('morgan')
 
 // initialitions
 
@@ -10,9 +11,10 @@ const path = require('path');
 app.set('port', process.env.PORT || 4000); /* Literalmente esto es una variable */
 app.set('views', path.join(__dirname, 'views')); /* Express busca la carpeta views en la raiz del proyecto por esta razón hay que setearlo */
 app.set('view engine', 'pug')
-app.use(express.json()); /* Para poder manipular json en las peticiones */
 
 // middlewares
+app.use(morgan('dev'))
+app.use(express.urlencoded({extended: false})); /* Para poder obtener los datos enviados desde un formulario */
 
 // global variables
 

@@ -1,8 +1,9 @@
 const renderNoteForm = (req, res) => {
-   res.send('Note Form here!')
+   res.render('notes/newNote')
 }
 
 const createNewNote = (req, res) => {
+   console.log(req.body);
    res.send('creating note...')
 }
 
