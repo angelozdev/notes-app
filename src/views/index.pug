@@ -1,0 +1,14 @@
+include parcials/head.pug
+body
+   include layout/navbar.pug
+   section.container.mx-auto.p-8.bg-gray-200.my-8.text-gray-700
+      h2.text-4xl.font-light
+         | Hello World with Pug and Express
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptatibus! Neque, iusto asperiores error eius architecto eligendi explicabo laboriosam voluptatum?
+      .divide-y
+         div.h-4
+         div.h-4
+      p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta animi quam, itaque ipsam corporis qui minima cumque culpa! Alias ad deserunt, iure quibusdam sit sed numquam aliquam tempora excepturi doloribus.
+      a.py-2.px-4.bg-blue-400.text-white.mt-4.inline-block(href="/notes")
+         | My Website
+   include layout/footer.pug
