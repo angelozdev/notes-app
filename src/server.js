@@ -9,6 +9,7 @@ const path = require('path')
 // settings
 app.set('port', process.env.PORT || 4000); /* Literalmente esto es una variable */
 app.set('views', path.join(__dirname, 'views')); /* Express busca la carpeta views en la raiz del proyecto por esta razón hay que setearlo */
+app.set('view engine', 'pug')
 app.use(express.json()); /* Para poder manipular json en las peticiones */
 
 // middlewares
@@ -17,7 +18,7 @@ app.use(express.json()); /* Para poder manipular json en las peticiones */
 
 // routes
 app.get('/', (req, res) => {
-   res.send('Hola mundo')
+   res.render('index')
 })
 
 // static files

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/",
-    "dev"  : "nodemon ./src/"
+    "dev": "nodemon ./src/"
   },
   "keywords": [],
   "author": "Angelo Zambrano <angelozam17@gmail.com>",
@@ -21,7 +21,8 @@
     "mongoose": "^5.9.21",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "pug": "^3.0.0"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
