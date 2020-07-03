@@ -6,31 +6,35 @@ const renderNoteForm = (_req, res) => {
 
 const createNewNote = (req, res) => {
    const { title, description } = req.body;
-   new Note({ title, description })
-   .save()
-   .then(() => res.send('Note created.'))
+   new Note({ title, description }).save()
+   .then(() => res.redirect('/notes'))
    .catch(err => console.error(`Hubo un error en ${err}`))
 }
 
 const renderNotes = (_req, res) => {
-   Note
-   .find()
+   Note.find()
    .then((data) => {
-      console.log('Get Notes success')
       res.render('notes/notes', { notes: data })
    })
 }
 
-const renderEditForm = (_req, res) => {
-   res.send('Edit note form')
+const renderEditForm = (req, res) => {
+   Note.findById(req.params.id)
+   .then((note) => res.render('notes/editNote', { note }))
 }
 
-const updateNote = (_req, res) => {
-   res.send('Update Note')
+const updateNote = (req, res) => {
+   const { title, description } = req.body;
+   Note.findByIdAndUpdate(req.params.id, { title, description })
+   .then(() => res.redirect('/notes'))
+   .catch(err => console.error(err))
 }
 
-const deleteNote = (_req, res) => {
-   res.send('Deleting Note...')
+const deleteNote = (req, res) => {
+   console.log(req.params.id)
+   Note.findByIdAndDelete(req.params.id)
+   .then(() => res.redirect('/notes'))
+   .catch(err => console.error(err))
 }
 
 module.exports = {

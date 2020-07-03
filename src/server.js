@@ -3,7 +3,8 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const morgan = require('morgan')
+const morgan = require('morgan');
+const methodOverride = require('method-override');
 
 // initialitions
 
@@ -15,6 +16,7 @@ app.set('view engine', 'pug')
 // middlewares
 app.use(morgan('dev'))
 app.use(express.urlencoded({extended: false})); /* Para poder obtener los datos enviados desde un formulario */
+app.use(methodOverride('_method'));
 
 // global variables
 

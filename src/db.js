@@ -5,7 +5,8 @@ const MONGODB_URI = process.env.MONGODB_URI; /* La variable se fefine en .env y 
 
 mongoose.connect(MONGODB_URI, {
    useUnifiedTopology: true,
-   useNewUrlParser: true
+   useNewUrlParser: true,
+   useFindAndModify: false
 })
 .then(() => console.log('Database is connected'))
 .catch(err => console.error(err))
