@@ -1,10 +1,11 @@
 /* Acá se configura todo el servidor */
-
 const express = require('express');
 const app = express();
 const path = require('path');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
+const flash = require('connect-flash');
+const expressSession = require('express-session');
 
 // initialitions
 
@@ -17,8 +18,18 @@ app.set('view engine', 'pug')
 app.use(morgan('dev'))
 app.use(express.urlencoded({extended: false})); /* Para poder obtener los datos enviados desde un formulario */
 app.use(methodOverride('_method'));
+app.use(expressSession({
+   secret: 'secret',
+   saveUninitialized: true,
+   resave: true
+}))
+app.use(flash())
 
 // global variables
+app.use((req, res, next) => {
+   res.locals.success_msg = req.flash('success_msg');
+   next()
+})
 
 // routes
 app.use(require('./routes/index.routes'));
