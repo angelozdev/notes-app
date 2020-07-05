@@ -5,11 +5,12 @@ const bcrypt = require('bcryptjs');
 const UserSchema = new Schema({
    name: {
       type: String,
-      required: true
+      required: true,
    },
    email: {
       type: String,
-      required: true
+      required: true,
+      unique: true
    },
    password: {
       type: String,
@@ -33,4 +34,4 @@ UserSchema.methods.matchPassword = async (password) => {
 }
 
 
-module.exports = model('User', UserSchema)
+module.exports = model('User', UserSchema, 'users')

@@ -10,7 +10,7 @@ const expressSession = require('express-session');
 // initialitions
 
 // settings
-app.set('port', process.env.PORT || 4000); /* Literalmente esto es una variable */
+app.set('port', process.env.PORT || 4002); /* Literalmente esto es una variable */
 app.set('views', path.join(__dirname, 'views')); /* Express busca la carpeta views en la raiz del proyecto por esta razón hay que setearlo */
 app.set('view engine', 'pug')
 
@@ -29,6 +29,7 @@ app.use(flash())
 app.use((req, res, next) => {
    try {
       res.locals.success_msg = req.flash('success_msg');
+      res.locals.error_msg = req.flash('error_msg')
       next()
    } catch (error) {
       next(error)
