@@ -9,7 +9,7 @@ body
          each note in notes
             li.border.p-4
                h3.font-semibold.flex.justify-between.uppercase= note.title
-                  a.text-xs(href=`/notes/edit/${note._id}`) edit
+                  a.flex.rounded-lg.bg-orange-400.uppercase.px-2.py-1.text-xs.text-white(href=`/notes/edit/${note._id}`) edit
                div
                   p= note.description
                form.mt-4(action=`/notes/delete/${note._id}?_method=DELETE`, method="POST")

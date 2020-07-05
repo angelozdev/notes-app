@@ -3,17 +3,17 @@ const router = Router()
 
 const {
    renderSignupForm,
-   renderSigninForm,
+   renderLoginForm,
    signin,
    login
 } = require('../controller/users.controller');
 
 /* Register */
-router.get('/signin', renderSigninForm)
-router.post('/signin', signin)
+router.get('/signup', renderSignupForm)
+router.post('/signup', signin)
 
 /* signup */
-router.get('/login', renderSignupForm)
+router.get('/login', renderLoginForm)
 router.post('/login', login)
 
 

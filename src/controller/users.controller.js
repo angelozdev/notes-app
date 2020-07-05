@@ -1,9 +1,9 @@
-const renderSignupForm = (req, res) => {
+const renderLoginForm = (req, res) => {
    res.render('users/login')
 }
 
-const renderSigninForm = (req, res) => {
-   res.render('users/signin')
+const renderSignupForm = (req, res) => {
+   res.render('users/signup')
 }
 
 const signin = (req, res) => {
@@ -17,7 +17,7 @@ const login = (req, res) => {
 
 module.exports = {
    renderSignupForm,
-   renderSigninForm,
+   renderLoginForm,
    signin,
    login
 }

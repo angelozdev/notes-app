@@ -16,7 +16,7 @@ app.set('view engine', 'pug')
 
 // middlewares
 app.use(morgan('dev'))
-app.use(express.urlencoded({extended: false})); /* Para poder obtener los datos enviados desde un formulario */
+app.use(express.urlencoded({ extended: false })); /* Para poder obtener los datos enviados desde un formulario */
 app.use(methodOverride('_method'));
 app.use(expressSession({
    secret: 'secret',
@@ -27,8 +27,12 @@ app.use(flash())
 
 // global variables
 app.use((req, res, next) => {
-   res.locals.success_msg = req.flash('success_msg');
-   next()
+   try {
+      res.locals.success_msg = req.flash('success_msg');
+      next()
+   } catch (error) {
+      next(error)
+   }
 })
 
 // routes
