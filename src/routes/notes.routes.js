@@ -30,7 +30,7 @@ router.post('/notes/new-note', isAuthenticated, createNewNote);
 
 /* Get Notes */
 router.get('/notes', isAuthenticated, (req, res) => {
-   getNotes()
+   getNotes(req.user.id)
       .then((notes) => {
          res.render('notes/notes', { notes })
          log(success(NOTES_ROUTES, 'GET NOTES'))

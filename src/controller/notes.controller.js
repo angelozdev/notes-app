@@ -12,8 +12,8 @@ const createNewNote = (req, res) => {
    .catch(err => console.error(`Hubo un error en ${err}`))
 }
 
-const getNotes = () => {
-   return Promise.resolve(db.get())
+const getNotes = (id) => {
+   return Promise.resolve(db.get(id))
 }
 
 const getNote = (id) => {

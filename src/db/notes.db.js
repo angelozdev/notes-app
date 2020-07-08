@@ -7,9 +7,9 @@ const success = chalk.bgGreenBright.black
 const error = chalk.bgRed;
 const NOTES_DB = '[NotesDB]: '
 
-const getNotes = () => (
+const getNotes = (id) => (
    new Promise((resolve, reject) => {
-      Note.find()
+      Note.find({ user: id })
          .then(data => {
             log(success(NOTES_DB, 'GET NOTES'))
             resolve(data)
