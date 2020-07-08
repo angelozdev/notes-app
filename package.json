@@ -1,7 +1,7 @@
 {
   "name": "mongo-node-fazt",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Learning MongoDB, Express, Mongoose, PugJS and tailwind",
   "main": "index.js",
   "scripts": {
     "start": "node ./src/",
@@ -28,5 +28,13 @@
     "dotenv": "^8.2.0",
     "handlebars": "^4.7.6",
     "npm-check-updates": "^7.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelozdev/notes-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/angelozdev/notes-app/issues"
+  },
+  "homepage": "https://github.com/angelozdev/notes-app#readme"
 }
