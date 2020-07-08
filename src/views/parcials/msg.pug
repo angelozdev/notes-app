@@ -11,5 +11,10 @@ if errors
 
 if `${error_msg}`
    div#msg.bg-orange-100.border-l-4.border-orange-500.text-orange-700.p-4.mb-4
-      p.font-bold Successful
+      p.font-bold Error
       p #{error_msg}
+
+if `${error}`
+   div#msg.bg-orange-100.border-l-4.border-orange-500.text-orange-700.p-4.mb-4
+      p.font-bold Error
+      p #{error}

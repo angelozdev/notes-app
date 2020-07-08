@@ -1,12 +1,10 @@
 const Note = require('../models/Note')
+const db = require('../db/notes.db')
 
-const renderNoteForm = (_req, res) => {
-   res.render('notes/newNote')
-}
 
 const createNewNote = (req, res) => {
    const { title, description } = req.body;
-   new Note({ title, description }).save()
+   new Note({ title, description, user: req.user._id }).save()
    .then(() => {
       req.flash('success_msg', 'Note was created')
       res.redirect('/notes')
@@ -14,16 +12,12 @@ const createNewNote = (req, res) => {
    .catch(err => console.error(`Hubo un error en ${err}`))
 }
 
-const renderNotes = (_req, res) => {
-   Note.find()
-   .then((data) => {
-      res.render('notes/notes', { notes: data })
-   })
+const getNotes = () => {
+   return Promise.resolve(db.get())
 }
 
-const renderEditForm = (req, res) => {
-   Note.findById(req.params.id)
-   .then((note) => res.render('notes/editNote', { note }))
+const getNote = (id) => {
+   return Promise.resolve(db.getOne(id))
 }
 
 const updateNote = (req, res) => {
@@ -47,10 +41,9 @@ const deleteNote = (req, res) => {
 }
 
 module.exports = {
-   renderNoteForm,
    createNewNote,
-   renderNotes,
-   renderEditForm,
+   getNotes,
+   getNote,
    updateNote,
    deleteNote
 }

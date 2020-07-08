@@ -28,7 +28,7 @@ UserSchema.methods.encryptPassword = async (password) => {
 }
 
 /* Este mètodo hace match con la contraseña que se pase por parámetro */
-UserSchema.methods.matchPassword = async (password) => {
+UserSchema.methods.matchPassword = async function (password) {
    const isCorrect = await bcrypt.compare(password, this.password);
    return isCorrect;
 }
