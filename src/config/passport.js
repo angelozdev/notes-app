@@ -10,11 +10,11 @@ passport.use('login', new LocalStrategy({
 
    //Match Email's User
    User.findOne({ email })
-      .then((user) => {
+      .then( async (user) => {
          if(!user){
             return done(null, false, { message: 'Not User Found' })
          }else {
-            return {match: user.matchPassword(password), user}
+            return {match: await user.matchPassword(password), user}
          }
       })
       .then(({ match, user }) => {
