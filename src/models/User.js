@@ -5,11 +5,12 @@ const bcrypt = require('bcryptjs');
 const UserSchema = new Schema({
    name: {
       type: String,
-      required: true
+      required: true,
    },
    email: {
       type: String,
-      required: true
+      required: true,
+      unique: true
    },
    password: {
       type: String,
@@ -27,10 +28,10 @@ UserSchema.methods.encryptPassword = async (password) => {
 }
 
 /* Este mètodo hace match con la contraseña que se pase por parámetro */
-UserSchema.methods.matchPassword = async (password) => {
+UserSchema.methods.matchPassword = async function (password) {
    const isCorrect = await bcrypt.compare(password, this.password);
    return isCorrect;
 }
 
 
-module.exports = model('User', UserSchema)
+module.exports = model('User', UserSchema, 'users')

@@ -2,13 +2,18 @@ nav.bg-gray-900.text-white
    .container.mx-auto.flex.items-center.p-4
       h1.text-2xl(class="hover:text-gray-400")
          a(href="/") EXPUG
+
       ul.flex
-         li.ml-4
-            a(href="/") Home
          li.ml-4
             a(href="/about") About
       ul.flex.ml-auto
-         li.ml-4
-            a(href="/login") Login
-         li.ml-4
-            a(href="/logout") Logout
+         if user
+            li.ml-4
+               a(href="/notes") All Notes
+            li.ml-4
+               a(href="/logout") Logout
+         else
+            li.ml-4
+               a(href="/login") Login
+            li.ml-4
+            a(href="/signup") Register

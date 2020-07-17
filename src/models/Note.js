@@ -1,5 +1,5 @@
 /* Estos son los schemas que debe segir la nota */
-const { Schema, model } = require('mongoose'); /*   */
+const { Schema, model, SchemaTypes } = require('mongoose'); /*   */
 
 const NoteSchema = new Schema({
    title: {
@@ -10,6 +10,10 @@ const NoteSchema = new Schema({
       type: String,
       required: true
    },
+   user: {
+      type: SchemaTypes.ObjectId,
+      ref: 'user'
+   }
 }, {
    timestamps: true
 })
