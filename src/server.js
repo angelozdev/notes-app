@@ -25,7 +25,10 @@ app.use(methodOverride('_method'));
 app.use(expressSession({
    secret: process.env.EXPRESS_SESSION_SECRET || 'secret',
    saveUninitialized: true,
-   resave: true
+   resave: true,
+   cookie: {
+      maxAge: 60000,
+   }
 }))
 app.use(passport.initialize())
 app.use(passport.session())
