@@ -23,7 +23,7 @@ app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: false })); /* Para poder obtener los datos enviados desde un formulario */
 app.use(methodOverride('_method'));
 app.use(expressSession({
-   secret: 'secret',
+   secret: process.env.EXPRESS_SESSION_SECRET || 'secret',
    saveUninitialized: true,
    resave: true
 }))
@@ -45,9 +45,13 @@ app.use((req, res, next) => {
 })
 
 // routes
-app.use(require('./routes/index.routes'));
-app.use(require('./routes/notes.routes'));
-app.use(require('./routes/users.routes'));
+app.use('/', require('./routes/index.routes'));
+app.use('/notes', require('./routes/notes.routes'));
+app.use('/', require('./routes/users.routes'));
+app.get('*', (req, res) => {
+   req.flash('error_msg', 'Not Found')
+   res.redirect('/')
+})
 
 
 // static files

@@ -18,18 +18,15 @@ const {
 } = require('../controller/notes.controller')
 
 
-
-
-
 /* Create Note */
-router.get('/notes/new', isAuthenticated, (_req, res) => {
+router.get('/new', isAuthenticated, (_req, res) => {
    res.render('notes/newNote')
 });
 
-router.post('/notes/new-note', isAuthenticated, createNewNote);
+router.post('/new-note', isAuthenticated, createNewNote);
 
 /* Get Notes */
-router.get('/notes', isAuthenticated, (req, res) => {
+router.get('/', isAuthenticated, (req, res) => {
    getNotes(req.user.id)
       .then((notes) => {
          res.render('notes/notes', { notes })
@@ -42,7 +39,7 @@ router.get('/notes', isAuthenticated, (req, res) => {
 });
 
 /* Edit Notes */
-router.get('/notes/edit/:id', isAuthenticated, (req, res) => {
+router.get('/edit/:id', isAuthenticated, (req, res) => {
    getNote(req.params.id)
       .then((note) => {
          if(note.user != req.user.id){
@@ -53,9 +50,9 @@ router.get('/notes/edit/:id', isAuthenticated, (req, res) => {
       })
       .catch(err => res.send(err))
 });
-router.put('/notes/edit/:id', isAuthenticated, updateNote);
+router.put('/edit/:id', isAuthenticated, updateNote);
 
 /* Delete Note */
-router.delete('/notes/delete/:id', isAuthenticated, deleteNote);
+router.delete('/delete/:id', isAuthenticated, deleteNote);
 
 module.exports = router;
