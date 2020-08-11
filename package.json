@@ -4,8 +4,10 @@
    "description": "Learning MongoDB, Express, Mongoose, PugJS and tailwind",
    "main": "index.js",
    "scripts": {
-      "build": "node ./src",
-      "dev": "nodemon ./src/"
+      "start": "node ./src",
+      "dev": "nodemon ./src/",
+      "ncu:check": "ncu",
+      "ncu:update": "ncu -u"
    },
    "keywords": [],
    "author": "Angelo Zambrano <angelozam17@gmail.com>",
