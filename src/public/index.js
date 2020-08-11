@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
    const $msg = document.querySelector('#msg');
-   const $msgs = document.querySelectorAll('.msgs')
+   const $msgs = document.querySelectorAll('.msgs');
 
-   if($msg) {
+   if ($msg) {
       setTimeout(() => {
-         $msg.remove()
-      }, 3000)
+         $msg.remove();
+      }, 3000);
    }
 
-   if($msgs){
+   if ($msgs) {
       setTimeout(() => {
-         $msgs.forEach(msg => {
-            msg.remove()
+         $msgs.forEach((msg) => {
+            msg.remove();
          });
-      }, 5000)
+      }, 5000);
    }
-})
+});
