@@ -41,7 +41,7 @@ router.get('/', isAuthenticated, (req, res) => {
 router.get('/edit/:id', isAuthenticated, (req, res) => {
    getNote(req.params.id)
       .then((note) => {
-         if (note.user != req.user.id) {
+         if (note.user.toString() !== req.user.id) {
             req.flash('error_msg', 'Not Authorized');
             return res.redirect('/notes');
          }
