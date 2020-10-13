@@ -23,7 +23,7 @@ npm start
 ```
 
 ## Preview
-![](./screenshot)
+![](./screenshot.png)
 
 ## Contributing
 
