@@ -1,8 +1,8 @@
 # App Notes
 
-Learning MongoDB, Express, Mongoose, PugJS and tailwind
+Note application using expressjs pugjs for the views and tailwindcss for the styles.
 
-## Description
+## Built with
 
 -  [Tailwind.css](https://tailwindcss.com/)
 -  [MongoDB](https://www.mongodb.com/es)
