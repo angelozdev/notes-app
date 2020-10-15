@@ -1,4 +1,4 @@
-# App Notes
+# Notes Application
 
 Note application using expressjs pugjs for the views and tailwindcss for the styles.
 
