@@ -10,17 +10,32 @@ Note application using expressjs pugjs for the views and tailwindcss for the sty
 -  [Passport](http://www.passportjs.org/)
 -  [PugJS](https://pugjs.org/api/getting-started.html)
 
-## Installation
+## Starting
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+_You can clone this repository to have the project local:_
+
+```bash
+git clone https://github.com/angelozdev/notes-app.git
+```
+
+_Install the necessary dependencies in the root of the project._
 
 ```bash
 npm install
-npm run dev   // Mode Development
+```
 
-npm run build
+_Run the following command to start the project in development mode:_
+
+```bash
+npm run dev
+```
+
+_Or run the following command to start the project in production mode:_
+
+```bash
 npm start
 ```
+
 
 ## Preview
 ![](./screenshot.png)
