@@ -10,6 +10,15 @@ _You can save your personal notes, edit and delete them._
 -  [Passport](http://www.passportjs.org/)
 -  [PugJS](https://pugjs.org/api/getting-started.html)
 
+## Deploy
+
+_You can see the project in production [Expug - Notes App](https://noteapp.angelozdev.vercel.app/)_
+
+**Demo**
+
+- email: johndoe@mail.com
+- password: admin1234
+
 ## Starting
 
 _You can clone this repository to have the project local:_
