@@ -1,5 +1,5 @@
 {
-   "name": "mongo-node-fazt",
+   "name": "notes-app",
    "version": "0.0.1",
    "description": "Learning MongoDB, Express, Mongoose, PugJS and tailwind",
    "main": "index.js",
