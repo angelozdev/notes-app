@@ -1,6 +1,6 @@
 # Notes Application
 
-Note application using expressjs pugjs for the views and tailwindcss for the styles.
+_You can save your personal notes, edit and delete them._
 
 ## Built with
 
